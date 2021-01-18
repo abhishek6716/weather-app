@@ -30,14 +30,14 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About me',
+        title: 'About',
         name: 'Abhishek Singh'
     });
 })
 
 app.get('/help', (req, res) => {
     res.render('help', {
-        helpText: 'some useful text',
+        helpText: 'Enter the location to check your weather condition!',
         title: 'Help',
         name: 'Abhishek Singh'
     });
@@ -68,20 +68,6 @@ app.get('/weather', (req, res) => {
         })
     })
 })
-
-
-app.get('/products', (req, res) => {
-    if(!req.query.search){
-        return res.send({
-            error: 'you must provide a search term'
-        })
-    }
-    console.log(req.query.search);
-    res.send({
-        products: []
-    })
-})
-
 
 app.get('/help/*', (req, res) => {
     res.render('404', {
