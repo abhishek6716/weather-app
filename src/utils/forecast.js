@@ -28,7 +28,7 @@ const forecast = (latitude, longitude, callback) => {
             callback('Unable to find location!', undefined);
         }
         else{
-            callback(undefined, body.current.condition.text + '. It is currently ' + body.current.temp_c + ' degree celcius out. There is a ' + body.current.precip_mm + '% chance of rain.');
+            callback(undefined, body.current.condition.text + '. It is currently ' + body.current.temp_c + ' degree celcius out and feels like ' + body.current.feelslike_c + ' degree celcius. Wind speed ' + body.current.wind_kph + 'kph. There is a ' + body.current.precip_mm + '% chance of rain.');
         }
     })
 }
