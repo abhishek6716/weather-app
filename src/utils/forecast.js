@@ -22,7 +22,7 @@ const forecast = (latitude, longitude, callback) => {
     const url = 'http://api.weatherapi.com/v1/forecast.json?key=441e0c5b91a9491a9ce45943211401&q=' + latitude +','+ longitude;
     request({url, json: true}, (error, {body}) => {
         if(error){
-            callback('Unable to connect to wheather service!', undefined);
+            callback('Unable to connect to weather service!', undefined);
         }
         else if(body.error){
             callback('Unable to find location!', undefined);
